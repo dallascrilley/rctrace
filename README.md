@@ -23,7 +23,7 @@ The EngFlow [Bazel Invocation Analyzer](https://docs.engflow.com/bia/how_to_use/
 
 ## Run locally
 
-Requires Node.js 20 or later.
+Requires Node.js 22 or later.
 
 ```sh
 git clone https://github.com/dallascrilley/rctrace.git
