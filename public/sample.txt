@@ -1,0 +1,5 @@
+# Captured from Bazel 9.3.1 while building a minimal filegroup. The rc path is a temporary fixture path.
+INFO: Reading rc options for 'build' from /private/tmp/rctrace-bazel-fixture/.bazelrc:
+  Inherited 'common' options: --announce_rc
+INFO: Reading rc options for 'build' from /private/tmp/rctrace-bazel-fixture/.bazelrc:
+  'build' options: --remote_cache=grpcs://cache.example.net --compilation_mode=opt --repository_cache=/tmp/rctrace-bazel-fixture/repository --action_env=LANG=en_US.UTF-8 --remote_upload_local_results=true

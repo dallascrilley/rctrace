@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f5f8">
+  <meta name="description" content="Find cache-related options in Bazel --announce_rc output and see the rc file Bazel reported for each one.">
+  <title>RcTrace · Bazel rc output inspector</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="/" aria-label="RcTrace home">RcTrace<span> / </span>announce_rc inspector</a>
+    <a class="source-link" href="https://github.com/dallascrilley/rctrace">Source on GitHub <span aria-hidden="true">↗</span></a>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="page-title" data-component="rctrace-intro">
+      <p class="eyebrow">BAZEL CONFIGURATION DEBUGGING</p>
+      <h1 id="page-title">Which rc file announced that cache flag?</h1>
+      <p>Paste Bazel <code>--announce_rc</code> output. RcTrace finds known cache-related options and shows the source file Bazel printed beside each one.</p>
+    </section>
+
+    <div class="workspace" data-component="rctrace-workspace">
+      <section class="input-panel" aria-labelledby="input-title" data-component="rctrace-input">
+        <div class="panel-heading">
+          <div>
+            <p class="step-label">INPUT</p>
+            <h2 id="input-title">Announcement output</h2>
+          </div>
+          <span class="privacy-tag"><span aria-hidden="true">●</span> Browser only</span>
+        </div>
+        <label class="visually-hidden" for="announce-output">Paste Bazel --announce_rc output</label>
+        <textarea id="announce-output" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="Paste Bazel --announce_rc output here."></textarea>
+        <div class="input-actions">
+          <button id="load-sample" class="button button-secondary" type="button">Load sample</button>
+          <button id="clear" class="text-button" type="button">Clear</button>
+          <span class="privacy-note">Nothing is uploaded or saved.</span>
+        </div>
+      </section>
+
+      <section class="output-panel" aria-labelledby="output-title" data-component="rctrace-results">
+        <div class="panel-heading">
+          <div>
+            <p class="step-label">RESULT</p>
+            <h2 id="output-title">Cache-related options</h2>
+          </div>
+          <span class="result-mark" aria-hidden="true">rc</span>
+        </div>
+        <p class="scope-note">A source location is provenance, not proof of the final effective value.</p>
+        <div id="results" class="results" aria-live="polite"></div>
+        <p id="status" class="status" role="status">Ready. Your text stays in this browser.</p>
+      </section>
+    </div>
+
+    <details class="limits">
+      <summary>What this output can and cannot tell you</summary>
+      <p><code>--announce_rc</code> reports options read from rc files. RcTrace keeps each recognized option with the source Bazel announced. It does not calculate the final effective value, resolve config precedence, inspect command-line overrides, or diagnose a cache miss.</p>
+      <p>Option explanations link to Bazel documentation. Repository download caching is shown separately from action caching. Action-configuration options are described as possible influences because their effect depends on the configured targets.</p>
+    </details>
+    <footer><span>MIT licensed</span><span>Made for a narrow question in Bazel cache debugging.</span></footer>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

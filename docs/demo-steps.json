@@ -1,0 +1,5 @@
+[
+  { "goto": "/" },
+  { "click": "#load-sample" },
+  { "wait": 450 }
+]

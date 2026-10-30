@@ -1,0 +1,37 @@
+{
+  "name": "RcTrace",
+  "problem": "Bazel --announce_rc output can be hard to scan when debugging remote and local cache behavior across several rc files.",
+  "user": "Bazel developers who need to find cache-related options and the rc file Bazel reported for each one.",
+  "standout": {
+    "name": "Reported cache options",
+    "description": "Show recognized cache-related flags grouped by what they control, with the source Bazel announced."
+  },
+  "demo_steps": [
+    "Load the included Bazel announcement sample.",
+    "Inspect cache options, bounded explanations, and the reported source file."
+  ],
+  "kind": "web",
+  "ai": false,
+  "description": "Trace cache-related Bazel options to their announced rc file.",
+  "proof_plan": {
+    "capability": "Parse structured diagnostic output, preserve provenance, and explain the limits of what that evidence proves.",
+    "baseline": "Read the terminal output manually or inspect a Bazel profile with EngFlow's Bazel Invocation Analyzer for its separate performance-analysis use case.",
+    "acceptance": [
+      {
+        "input": "An announcement containing --remote_cache and --compilation_mode from two rc files.",
+        "expected": "Both flags retain their respective reported source and receive distinct direct-cache and action-configuration explanations.",
+        "failure": "Unrecognized or malformed lines are not guessed into flags; show a clear empty/error result and do not claim effective precedence."
+      }
+    ],
+    "case_study_hypothesis": "Does grouping reported cache options by role make the source and limits of Bazel announcement evidence easier to inspect than a raw text scan?"
+  },
+  "prior_art": {
+    "decision": "new",
+    "references": [
+      "https://bazel.googlesource.com/bazel/+/staging/site/docs/user-manual.html",
+      "https://docs.bazel.build/versions/main/remote-execution-caching-debug.html",
+      "https://docs.engflow.com/bia/how_to_use/github_repo.html"
+    ],
+    "rationale": "Bazel docs describe --announce_rc, and EngFlow's analyzer works from Bazel profiles to suggest performance improvements. RcTrace answers a narrower input question by mapping announced option tokens to reported rc-file sources."
+  }
+}

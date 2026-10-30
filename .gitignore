@@ -1,0 +1,12 @@
+node_modules/
+.wrangler/
+.DS_Store
+*.log
+portfolio-handoff.json
+timing.json
+release-receipt.json
+case-study-receipt.json
+docs/CASE_STUDY.md
+docs/CASE_STUDY_BRIEF.md
+/docs/*-preview.png
+/docs/demo-final.png

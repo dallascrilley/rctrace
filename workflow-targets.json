@@ -1,0 +1,11 @@
+{
+  "target_minutes": {
+    "concept_including_research": 3,
+    "build": 10,
+    "proof_package": 4,
+    "publish_application_inclusion_handoff": 3,
+    "total": 20
+  },
+  "scope": "Count fresh ideation or research in observed elapsed time when performed during this run; a pre-researched opportunity may start at concept selection. Application inclusion is in the final phase. Application submission is a separate explicitly authorized action and is recorded separately after verification.",
+  "targets_are_not_guarantees": true
+}
